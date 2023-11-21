@@ -24,6 +24,12 @@ func InstallSSOKeycloak() error {
 		return err
 	}
 	fmt.Println("Keycloak has successfully been installed")
+
+	if err := kubernetes.WaitForPodStatusRunning("keycloak-system", "keycloak"); err != nil {
+		return err
+	}
+	fmt.Println("Keycloak is up and running")
+
 	return nil
 }
 
