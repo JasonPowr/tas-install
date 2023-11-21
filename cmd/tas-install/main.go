@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"work/securesign/tas-install/pkg/keycloak"
 	"work/securesign/tas-install/pkg/kubernetes"
@@ -15,6 +14,6 @@ func main() {
 	}
 
 	if err := keycloak.InstallSSOKeycloak(); err != nil {
-		fmt.Println(err.Error())
+		log.Fatalf("Failed to install keycloak: %v", err)
 	}
 }
