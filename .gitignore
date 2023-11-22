@@ -1,3 +1,4 @@
 tas-install
 cleanup.sh
 keys-cert
+pull-secret.json
